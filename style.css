@@ -14,21 +14,21 @@ body {
     align-items: center;
 }
 
-/* TITLE */
+
 .main-title {
     font-size: 42px;
     margin: 25px 0 35px;
     letter-spacing: 2px;
 }
 
-/* MAIN LAYOUT */
+
 .layout {
     display: flex;
     gap: 25px;
     align-items: flex-start;
 }
 
-/* COMMON BOX */
+/
 .box {
     padding: 22px;
     border-radius: 18px;
@@ -36,7 +36,6 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* BOX SIZES */
 .aadhaar-box,
 .receipt-box {
     width: 260px;
@@ -46,7 +45,7 @@ body {
     width: 420px;
 }
 
-/* AADHAAR BOX */
+
 .aadhaar-box {
     background: linear-gradient(135deg, #065f46, #0f766e);
 }
@@ -59,7 +58,7 @@ body {
     border: none;
 }
 
-/* VOTING BOX */
+
 .voting-box {
     background: linear-gradient(135deg, #1e3a8a, #312e81);
 }
@@ -80,7 +79,7 @@ body {
     align-items: center;
 }
 
-/* 🔥 IMPORTANT FIX: LOGO SIZE CONTROL */
+
 .candidate-info img {
     width: 42px;
     height: 42px;
@@ -90,7 +89,7 @@ body {
     border-radius: 8px;
 }
 
-/* RECEIPT BOX */
+
 .receipt-box {
     background: linear-gradient(135deg, #14532d, #166534);
     display: none;
@@ -117,7 +116,7 @@ body {
     opacity: 0.8;
 }
 
-/* BUTTONS */
+
 button {
     width: 100%;
     padding: 10px;
@@ -133,13 +132,12 @@ button:hover {
     background: #16a34a;
 }
 
-/* DISABLED STATE */
+
 .disabled {
     opacity: 0.4;
     pointer-events: none;
 }
 
-/* PRINT ONLY RECEIPT */
 @media print {
     body * {
         visibility: hidden;
@@ -157,3 +155,4 @@ button:hover {
         box-shadow: none;
     }
 }
+
