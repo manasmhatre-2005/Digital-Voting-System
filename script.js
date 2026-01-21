@@ -1,34 +1,31 @@
 let aadhaarVerified = false;
 
-// Confidential storage
-let usedAadhaar = {};              // Aadhaar → voted
+
+let usedAadhaar = {};             
 let partyVoteCount = { A: 0, B: 0 };
 
 function registerAadhaar() {
     const aadhaar = document.getElementById("aadhaar").value;
 
-    // Check only length and numeric value
     if (!aadhaar || aadhaar.length !== 12 || isNaN(aadhaar)) {
         document.getElementById("aadhaarStatus").innerText =
             "Invalid Aadhaar number (must be 12 digits)";
         return;
     }
 
-    // Prevent multiple voting
     if (usedAadhaar[aadhaar]) {
         document.getElementById("aadhaarStatus").innerText =
             "Aadhaar already used for voting";
         return;
     }
 
-    // Mark Aadhaar as verified
     aadhaarVerified = true;
     usedAadhaar[aadhaar] = true;
 
     document.getElementById("aadhaarStatus").innerText =
         "Aadhaar verified successfully";
 
-    // Enable voting
+    
     document.getElementById("votingBox")
         .classList.remove("disabled");
 
@@ -39,10 +36,8 @@ function registerAadhaar() {
 function vote(candidate) {
     if (!aadhaarVerified) return;
 
-    // Store ONLY party-wise count (confidential)
     partyVoteCount[candidate]++;
 
-    // Show receipt
     document.getElementById("receiptBox").style.display = "block";
 
     if (candidate === "A") {
@@ -67,3 +62,4 @@ function vote(candidate) {
 function downloadReceipt() {
     window.print();
 }
+
