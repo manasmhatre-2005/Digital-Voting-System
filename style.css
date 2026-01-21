@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020617, #1e3a8a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITLE */
+.main-title {
+    font-size: 42px;
+    margin: 25px 0 35px;
+    letter-spacing: 2px;
+}
+
+/* MAIN LAYOUT */
+.layout {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* COMMON BOX */
+.box {
+    padding: 22px;
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* BOX SIZES */
+.aadhaar-box,
+.receipt-box {
+    width: 260px;
+}
+
+.voting-box {
+    width: 420px;
+}
+
+/* AADHAAR BOX */
+.aadhaar-box {
+    background: linear-gradient(135deg, #065f46, #0f766e);
+}
+
+.aadhaar-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 14px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+/* VOTING BOX */
+.voting-box {
+    background: linear-gradient(135deg, #1e3a8a, #312e81);
+}
+
+.candidate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.12);
+    padding: 14px;
+    border-radius: 14px;
+    margin-top: 14px;
+}
+
+.candidate-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* 🔥 IMPORTANT FIX: LOGO SIZE CONTROL */
+.candidate-info img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    background: white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+/* RECEIPT BOX */
+.receipt-box {
+    background: linear-gradient(135deg, #14532d, #166534);
+    display: none;
+}
+
+.receipt-party {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.receipt-party img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.note {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* DISABLED STATE */
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* PRINT ONLY RECEIPT */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .receipt-box,
+    .receipt-box * {
+        visibility: visible;
+    }
+    .receipt-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        box-shadow: none;
+    }
+}

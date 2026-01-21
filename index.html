@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Voting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="main-title">Digital Voting</h1>
+
+<div class="layout">
+
+    <!-- Aadhaar Box -->
+    <div class="box aadhaar-box">
+        <h3>Aadhaar Verification</h3>
+        <input type="text" id="aadhaar" placeholder="Enter 12-digit Aadhaar" maxlength="12">
+        <button onclick="registerAadhaar()">Register</button>
+        <p id="aadhaarStatus">Not verified</p>
+    </div>
+
+    <!-- Voting Box -->
+    <div class="box voting-box disabled" id="votingBox">
+        <h2>Cast Your Vote</h2>
+
+        <div class="candidate">
+            <div class="candidate-info">
+                <img src="images/partyA.png">
+                <div>
+                    <strong>Candidate A</strong>
+                    <p>Bharatiya Janata Party</p>
+                </div>
+            </div>
+            <button onclick="vote('A')">Vote</button>
+        </div>
+
+        <div class="candidate">
+            <div class="candidate-info">
+                <img src="images/partyB.png">
+                <div>
+                    <strong>Candidate B</strong>
+                    <p>Shiv Sena (Uddhav Balasaheb Thackeray Group)</p>
+                </div>
+            </div>
+            <button onclick="vote('B')">Vote</button>
+        </div>
+
+        <p id="voteStatus">Verify Aadhaar to enable voting</p>
+    </div>
+
+    <!-- Receipt Box -->
+    <div class="box receipt-box" id="receiptBox">
+        <h3>Vote Receipt</h3>
+
+        <div class="receipt-party">
+            <img id="receiptLogo">
+            <p id="receiptParty"></p>
+        </div>
+
+        <p>Status: <strong>Recorded</strong></p>
+        <p id="receiptTime"></p>
+
+        <p class="note">Vote choice is confidential</p>
+
+        <button onclick="downloadReceipt()">Download Receipt</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
